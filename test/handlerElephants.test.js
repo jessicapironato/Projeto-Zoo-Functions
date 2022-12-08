@@ -13,10 +13,21 @@ describe('Testes da função HandlerElephants', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('caso receba parametro um elemento contido no array formado pelos objetos, retorne o resultado do parametro', () => {
+  it('caso receba parametro um elemento contido no array formado pelas chaves, retorne o resultado do parametro', () => {
     const actual = handlerElephants('id');
     const expected = ('bb2a76d8-5fe3-4d03-84b7-dba9cfc048b5');
     expect(actual).toEqual(expected);
   });
 
+  it('caso receba parametro count, retorne o tamanho do array de residentes', () => {
+    const actual = handlerElephants('count');
+    const expected = (4);
+    expect(actual).toBe(expected);
+  });
+
+  it('caso receba parametro names, retorne os nomes dos residentes', () => {
+    const actual = handlerElephants('names');
+    const expected = (['Ilana', 'Orval', 'Bea', 'Jefferson']);
+    expect(actual).toEqual(expected);
+  });
 });
