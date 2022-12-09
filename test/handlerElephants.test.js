@@ -30,4 +30,16 @@ describe('Testes da função HandlerElephants', () => {
     const expected = (['Ilana', 'Orval', 'Bea', 'Jefferson']);
     expect(actual).toEqual(expected);
   });
+
+  it('caso receba parametro averageAge, retorne a média dos residentes', () => {
+    const actual = handlerElephants('averageAge');
+    const expected = (10.5);
+    expect(actual).toBe(expected);
+  });
+
+  it('caso receba um parametro diferente do esperado, retorne null', () => {
+    const actual = handlerElephants('teste');
+    const expected = null;
+    expect(actual).toBe(expected);
+  });
 });
