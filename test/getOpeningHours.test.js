@@ -38,4 +38,10 @@ describe('Testes da função getOpeningHours', () => {
   it('caso receba um valor de dia inválido, retorna um erro', () => {
     expect(() => { getOpeningHours('Tu', '09:00-AM'); }).toThrow(new Error('The day must be valid. Example: Monday'));
   });
+  it('caso receba um valor de hora acima de 12, retorna um erro', () => {
+    expect(() => getOpeningHours('Friday', '16:00-PM')).toThrow(new Error('The hour must be between 0 and 12'));
+  });
+  it('caso receba um valor de minutos acima de 60, retorna um erro', () => {
+    expect(() => getOpeningHours('Friday', '12:61-PM')).toThrow('The minutes must be between 0 and 59');
+  });
 });
